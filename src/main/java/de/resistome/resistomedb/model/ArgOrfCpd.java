@@ -13,7 +13,7 @@ public class ArgOrfCpd {
     private Integer aocpdid;
 
     private Integer orf_id;
-    
+
     private Integer arg_id;
 
 

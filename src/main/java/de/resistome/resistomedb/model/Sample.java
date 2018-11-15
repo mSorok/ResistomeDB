@@ -1,6 +1,7 @@
 package de.resistome.resistomedb.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
@@ -15,7 +16,7 @@ public class Sample {
 
     private String pangea_id; // PANGEA Sample ID (in meta2) or PANGEA sample identifier in meta_dordb
 
-    private String run_accession; // starts with ERR - corresponds to the ID from the ENA runs - "value" in meta_fordb
+    private ArrayList<String> run_accession; // starts with ERR - corresponds to the ID from the ENA runs - "value" in meta_fordb
 
     @Column(name = "mean_date", columnDefinition="TIMESTAMP")
     @Temporal(TemporalType.TIMESTAMP)
@@ -25,11 +26,13 @@ public class Sample {
     @Temporal(TemporalType.TIMESTAMP)
     private Date date_time; //Date/Time [yyyy-mm-ddThh:mm] from meta_fordb
 
-    private Double mean_lattitude; //Mean_Lat* from meta2
+    private Double mean_lattitude; //Mean_Lat* from meta2 AND Latitude [degrees North] from meta_fordb
 
-    private Double mean_longitude; //Mean_Long* from meta2
+    private Double mean_longitude; //Mean_Long* from meta2 AND Longitude [degrees East] from meta_fordb
 
     private Double mean_depth; //Mean_Depth [m] from meta2
+
+    private Double biosample_depth; // Sampling depth [m] from meta_fordb
 
     private Double mean_temperature; //Mean_Temperature [deg C]* from meta2
 
@@ -99,6 +102,18 @@ public class Sample {
 
     private String station_id; // from meta_fordb : Station identifier [TARA_station#]
 
+    public String environmental_feature ; // Environmental Feature from meta_fordb
+
+    private Double size_fraction_lower_threshold ; // Size fraction lower threshold [micrometre] from meta_fordb
+
+    private Double size_fraction_upper_threshold ; // Size fraction upper threshold [micrometre] from meta_fordb
+
+    public String marine_pelagic_biomes; // Marine pelagic biomes (Longhurst 2007) from meta_fordb
+
+    public String marine_pelagic_biomes_mrgid; //Marine pelagic biomes  (Longhurst 2007) [MRGID registered at www.marineregions.com]
+
+    public String region;  //Ocean and sea regions (IHO General Sea Areas 1953) [MRGID registered at www.marineregions.com] from meta_fordb
+
 
 
 
@@ -111,8 +126,11 @@ public class Sample {
 
 
 
-    //meta_fordb: ,,,Corresponding nucleotides data published at ENA,,Corresponding contextual data published at PANGAEA,Station identifier [TARA_station#],,Latitude [degrees North],Longitude [degrees East],Sampling depth [m],Environmental Feature,Size fraction lower threshold [micrometre],Size fraction upper threshold [micrometre],Marine pelagic biomes (Longhurst 2007),Ocean and sea regions (IHO General Sea Areas 1953) [MRGID registered at www.marineregions.com],Marine pelagic biomes  (Longhurst 2007) [MRGID registered at www.marineregions.com] ,variable,value
+    //meta_fordb: ,,,Corresponding nucleotides data published at ENA,,Corresponding contextual data published at PANGAEA,,,,,,,,,,,Marine pelagic biomes  (Longhurst 2007) [MRGID registered at www.marineregions.com] ,variable,value
+
+//Sample label [TARA_station#_environmental-feature_size-fraction],INSDC sample accession number(s),INSDC run accession number(s),Corresponding nucleotides data published at ENA,PANGAEA sample identifier,Corresponding contextual data published at PANGAEA,Station identifier [TARA_station#],Date/Time [yyyy-mm-ddThh:mm],Latitude [degrees North],Longitude [degrees East],Sampling depth [m],Environmental Feature,Size fraction lower threshold [micrometre],Size fraction upper threshold [micrometre],Marine pelagic biomes (Longhurst 2007),Ocean and sea regions (IHO General Sea Areas 1953) [MRGID registered at www.marineregions.com],Marine pelagic biomes  (Longhurst 2007) [MRGID registered at www.marineregions.com] ,variable,value
+    //TARA_004_DCM_0.22-1.6,ERS487936,ERR598950|ERR599095,"http://www.ebi.ac.uk/ena/data/view/ERR598950,ERR599095",TARA_X000000368,http://www.pangaea.de/search?All&q=TARA_X000000368,TARA_004,2009-09-15T18:00,36.5533,-6.5669,40,(DCM) deep chlorophyll maximum layer (ENVO:01000326),0.22,1.6,Westerlies Biome,(NAO) North Atlantic Ocean [MRGID:1912],(NAST-E) North Atlantic Subtropical Gyral Province [MRGID:21467],0,ERR598950
 
 
-    //,,,"http://www.ebi.ac.uk/ena/data/view/ERR598950,ERR599095",,http://www.pangaea.de/search?All&q=TARA_X000000368,TARA_004,,36.5533,-6.5669,40,(DCM) deep chlorophyll maximum layer (ENVO:01000326),0.22,1.6,Westerlies Biome,(NAO) North Atlantic Ocean [MRGID:1912],(NAST-E) North Atlantic Subtropical Gyral Province [MRGID:21467],0,ERR598950
+    //,,,"http://www.ebi.ac.uk/ena/data/view/ERR598950,ERR599095",,http://www.pangaea.de/search?All&q=TARA_X000000368,,,,,,,,,,,(NAST-E) North Atlantic Subtropical Gyral Province [MRGID:21467],0,ERR598950
 }
