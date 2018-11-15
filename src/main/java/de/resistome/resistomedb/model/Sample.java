@@ -126,11 +126,417 @@ public class Sample {
 
 
 
-    //meta_fordb: ,,,Corresponding nucleotides data published at ENA,,Corresponding contextual data published at PANGAEA,,,,,,,,,,,Marine pelagic biomes  (Longhurst 2007) [MRGID registered at www.marineregions.com] ,variable,value
-
-//Sample label [TARA_station#_environmental-feature_size-fraction],INSDC sample accession number(s),INSDC run accession number(s),Corresponding nucleotides data published at ENA,PANGAEA sample identifier,Corresponding contextual data published at PANGAEA,Station identifier [TARA_station#],Date/Time [yyyy-mm-ddThh:mm],Latitude [degrees North],Longitude [degrees East],Sampling depth [m],Environmental Feature,Size fraction lower threshold [micrometre],Size fraction upper threshold [micrometre],Marine pelagic biomes (Longhurst 2007),Ocean and sea regions (IHO General Sea Areas 1953) [MRGID registered at www.marineregions.com],Marine pelagic biomes  (Longhurst 2007) [MRGID registered at www.marineregions.com] ,variable,value
-    //TARA_004_DCM_0.22-1.6,ERS487936,ERR598950|ERR599095,"http://www.ebi.ac.uk/ena/data/view/ERR598950,ERR599095",TARA_X000000368,http://www.pangaea.de/search?All&q=TARA_X000000368,TARA_004,2009-09-15T18:00,36.5533,-6.5669,40,(DCM) deep chlorophyll maximum layer (ENVO:01000326),0.22,1.6,Westerlies Biome,(NAO) North Atlantic Ocean [MRGID:1912],(NAST-E) North Atlantic Subtropical Gyral Province [MRGID:21467],0,ERR598950
+    //meta_fordb: ,,,Corresponding nucleotides data published at ENA,,Corresponding contextual data published at PANGAEA,,,,,,,,,,,
 
 
-    //,,,"http://www.ebi.ac.uk/ena/data/view/ERR598950,ERR599095",,http://www.pangaea.de/search?All&q=TARA_X000000368,,,,,,,,,,,(NAST-E) North Atlantic Subtropical Gyral Province [MRGID:21467],0,ERR598950
+    //,,,"http://www.ebi.ac.uk/ena/data/view/ERR598950,ERR599095",,http://www.pangaea.de/search?All&q=TARA_X000000368,,,,,,,,,,,-
+
+
+    public Integer getSample_id() {
+        return sample_id;
+    }
+
+    public void setSample_id(Integer sample_id) {
+        this.sample_id = sample_id;
+    }
+
+    public String getSample_id_explained() {
+        return sample_id_explained;
+    }
+
+    public void setSample_id_explained(String sample_id_explained) {
+        this.sample_id_explained = sample_id_explained;
+    }
+
+    public String getPangea_id() {
+        return pangea_id;
+    }
+
+    public void setPangea_id(String pangea_id) {
+        this.pangea_id = pangea_id;
+    }
+
+    public ArrayList<String> getRun_accession() {
+        return run_accession;
+    }
+
+    public void setRun_accession(ArrayList<String> run_accession) {
+        this.run_accession = run_accession;
+    }
+
+    public Date getMean_date() {
+        return mean_date;
+    }
+
+    public void setMean_date(Date mean_date) {
+        this.mean_date = mean_date;
+    }
+
+    public Date getDate_time() {
+        return date_time;
+    }
+
+    public void setDate_time(Date date_time) {
+        this.date_time = date_time;
+    }
+
+    public Double getMean_lattitude() {
+        return mean_lattitude;
+    }
+
+    public void setMean_lattitude(Double mean_lattitude) {
+        this.mean_lattitude = mean_lattitude;
+    }
+
+    public Double getMean_longitude() {
+        return mean_longitude;
+    }
+
+    public void setMean_longitude(Double mean_longitude) {
+        this.mean_longitude = mean_longitude;
+    }
+
+    public Double getMean_depth() {
+        return mean_depth;
+    }
+
+    public void setMean_depth(Double mean_depth) {
+        this.mean_depth = mean_depth;
+    }
+
+    public Double getBiosample_depth() {
+        return biosample_depth;
+    }
+
+    public void setBiosample_depth(Double biosample_depth) {
+        this.biosample_depth = biosample_depth;
+    }
+
+    public Double getMean_temperature() {
+        return mean_temperature;
+    }
+
+    public void setMean_temperature(Double mean_temperature) {
+        this.mean_temperature = mean_temperature;
+    }
+
+    public Double getMean_salinity() {
+        return mean_salinity;
+    }
+
+    public void setMean_salinity(Double mean_salinity) {
+        this.mean_salinity = mean_salinity;
+    }
+
+    public Double getMean_oxygen() {
+        return mean_oxygen;
+    }
+
+    public void setMean_oxygen(Double mean_oxygen) {
+        this.mean_oxygen = mean_oxygen;
+    }
+
+    public Double getMean_nitrates() {
+        return mean_nitrates;
+    }
+
+    public void setMean_nitrates(Double mean_nitrates) {
+        this.mean_nitrates = mean_nitrates;
+    }
+
+    public Double getNo2() {
+        return no2;
+    }
+
+    public void setNo2(Double no2) {
+        this.no2 = no2;
+    }
+
+    public Double getPo4() {
+        return po4;
+    }
+
+    public void setPo4(Double po4) {
+        this.po4 = po4;
+    }
+
+    public Double getNo2no3() {
+        return no2no3;
+    }
+
+    public void setNo2no3(Double no2no3) {
+        this.no2no3 = no2no3;
+    }
+
+    public Double getSi() {
+        return si;
+    }
+
+    public void setSi(Double si) {
+        this.si = si;
+    }
+
+    public Double getAmodis() {
+        return amodis;
+    }
+
+    public void setAmodis(Double amodis) {
+        this.amodis = amodis;
+    }
+
+    public Double getOkubo_weiss() {
+        return okubo_weiss;
+    }
+
+    public void setOkubo_weiss(Double okubo_weiss) {
+        this.okubo_weiss = okubo_weiss;
+    }
+
+    public Double getLyapunov() {
+        return lyapunov;
+    }
+
+    public void setLyapunov(Double lyapunov) {
+        this.lyapunov = lyapunov;
+    }
+
+    public Double getGrad_sst_adv() {
+        return grad_sst_adv;
+    }
+
+    public void setGrad_sst_adv(Double grad_sst_adv) {
+        this.grad_sst_adv = grad_sst_adv;
+    }
+
+    public Double getRetention_mean_depth_mld_sigma() {
+        return retention_mean_depth_mld_sigma;
+    }
+
+    public void setRetention_mean_depth_mld_sigma(Double retention_mean_depth_mld_sigma) {
+        this.retention_mean_depth_mld_sigma = retention_mean_depth_mld_sigma;
+    }
+
+    public Double getMean_depth_max_fluo() {
+        return mean_depth_max_fluo;
+    }
+
+    public void setMean_depth_max_fluo(Double mean_depth_max_fluo) {
+        this.mean_depth_max_fluo = mean_depth_max_fluo;
+    }
+
+    public Double getMean_depth_max_n2() {
+        return mean_depth_max_n2;
+    }
+
+    public void setMean_depth_max_n2(Double mean_depth_max_n2) {
+        this.mean_depth_max_n2 = mean_depth_max_n2;
+    }
+
+    public Double getMean_depth_max_o2() {
+        return mean_depth_max_o2;
+    }
+
+    public void setMean_depth_max_o2(Double mean_depth_max_o2) {
+        this.mean_depth_max_o2 = mean_depth_max_o2;
+    }
+
+    public Double getMean_depth_min_o2() {
+        return mean_depth_min_o2;
+    }
+
+    public void setMean_depth_min_o2(Double mean_depth_min_o2) {
+        this.mean_depth_min_o2 = mean_depth_min_o2;
+    }
+
+    public Double getMean_depth_nitracline() {
+        return mean_depth_nitracline;
+    }
+
+    public void setMean_depth_nitracline(Double mean_depth_nitracline) {
+        this.mean_depth_nitracline = mean_depth_nitracline;
+    }
+
+    public Double getMitag_silva_taxo_richness() {
+        return mitag_silva_taxo_richness;
+    }
+
+    public void setMitag_silva_taxo_richness(Double mitag_silva_taxo_richness) {
+        this.mitag_silva_taxo_richness = mitag_silva_taxo_richness;
+    }
+
+    public Double getMitag_silva_phylo_diversity() {
+        return mitag_silva_phylo_diversity;
+    }
+
+    public void setMitag_silva_phylo_diversity(Double mitag_silva_phylo_diversity) {
+        this.mitag_silva_phylo_diversity = mitag_silva_phylo_diversity;
+    }
+
+    public Double getMitag_silva_chao() {
+        return mitag_silva_chao;
+    }
+
+    public void setMitag_silva_chao(Double mitag_silva_chao) {
+        this.mitag_silva_chao = mitag_silva_chao;
+    }
+
+    public Double getMitag_silva_ace() {
+        return mitag_silva_ace;
+    }
+
+    public void setMitag_silva_ace(Double mitag_silva_ace) {
+        this.mitag_silva_ace = mitag_silva_ace;
+    }
+
+    public Double getMitag_silva_shannon() {
+        return mitag_silva_shannon;
+    }
+
+    public void setMitag_silva_shannon(Double mitag_silva_shannon) {
+        this.mitag_silva_shannon = mitag_silva_shannon;
+    }
+
+    public Double getOg_shannon() {
+        return og_shannon;
+    }
+
+    public void setOg_shannon(Double og_shannon) {
+        this.og_shannon = og_shannon;
+    }
+
+    public Double getOg_richness() {
+        return og_richness;
+    }
+
+    public void setOg_richness(Double og_richness) {
+        this.og_richness = og_richness;
+    }
+
+    public Double getOg_evenness() {
+        return og_evenness;
+    }
+
+    public void setOg_evenness(Double og_evenness) {
+        this.og_evenness = og_evenness;
+    }
+
+    public Double getFc_heterotrophs() {
+        return fc_heterotrophs;
+    }
+
+    public void setFc_heterotrophs(Double fc_heterotrophs) {
+        this.fc_heterotrophs = fc_heterotrophs;
+    }
+
+    public Double getFc_autotrophs() {
+        return fc_autotrophs;
+    }
+
+    public void setFc_autotrophs(Double fc_autotrophs) {
+        this.fc_autotrophs = fc_autotrophs;
+    }
+
+    public Double getFc_bacteria() {
+        return fc_bacteria;
+    }
+
+    public void setFc_bacteria(Double fc_bacteria) {
+        this.fc_bacteria = fc_bacteria;
+    }
+
+    public Double getFc_picoeukaryotes() {
+        return fc_picoeukaryotes;
+    }
+
+    public void setFc_picoeukaryotes(Double fc_picoeukaryotes) {
+        this.fc_picoeukaryotes = fc_picoeukaryotes;
+    }
+
+    public Integer getMinimum_generation_time() {
+        return minimum_generation_time;
+    }
+
+    public void setMinimum_generation_time(Integer minimum_generation_time) {
+        this.minimum_generation_time = minimum_generation_time;
+    }
+
+    public String getInsdc_sample_acc_number() {
+        return insdc_sample_acc_number;
+    }
+
+    public void setInsdc_sample_acc_number(String insdc_sample_acc_number) {
+        this.insdc_sample_acc_number = insdc_sample_acc_number;
+    }
+
+    public String getInsdc_run_acc_number() {
+        return insdc_run_acc_number;
+    }
+
+    public void setInsdc_run_acc_number(String insdc_run_acc_number) {
+        this.insdc_run_acc_number = insdc_run_acc_number;
+    }
+
+    public String getStation_id() {
+        return station_id;
+    }
+
+    public void setStation_id(String station_id) {
+        this.station_id = station_id;
+    }
+
+    public String getEnvironmental_feature() {
+        return environmental_feature;
+    }
+
+    public void setEnvironmental_feature(String environmental_feature) {
+        this.environmental_feature = environmental_feature;
+    }
+
+    public Double getSize_fraction_lower_threshold() {
+        return size_fraction_lower_threshold;
+    }
+
+    public void setSize_fraction_lower_threshold(Double size_fraction_lower_threshold) {
+        this.size_fraction_lower_threshold = size_fraction_lower_threshold;
+    }
+
+    public Double getSize_fraction_upper_threshold() {
+        return size_fraction_upper_threshold;
+    }
+
+    public void setSize_fraction_upper_threshold(Double size_fraction_upper_threshold) {
+        this.size_fraction_upper_threshold = size_fraction_upper_threshold;
+    }
+
+    public String getMarine_pelagic_biomes() {
+        return marine_pelagic_biomes;
+    }
+
+    public void setMarine_pelagic_biomes(String marine_pelagic_biomes) {
+        this.marine_pelagic_biomes = marine_pelagic_biomes;
+    }
+
+    public String getMarine_pelagic_biomes_mrgid() {
+        return marine_pelagic_biomes_mrgid;
+    }
+
+    public void setMarine_pelagic_biomes_mrgid(String marine_pelagic_biomes_mrgid) {
+        this.marine_pelagic_biomes_mrgid = marine_pelagic_biomes_mrgid;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public Integer getVariable() {
+        return variable;
+    }
+
+    public void setVariable(Integer variable) {
+        this.variable = variable;
+    }
 }
