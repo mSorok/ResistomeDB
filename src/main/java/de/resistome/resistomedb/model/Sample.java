@@ -58,7 +58,8 @@ public class Sample {
 
     private Double grad_sst_adv; //grad_SST_adv
 
-    private Double retention_mean_depth_mld_sigma; //retention	Mean Depth MLD Sigma [m]*
+    private Double retention; //retention
+    private Double mean_depth_mld_sigma; //Mean Depth MLD Sigma [m]*
 
     private Double mean_depth_max_fluo; //Mean Depth Max Fluo [m]*
 
@@ -308,12 +309,20 @@ public class Sample {
         this.grad_sst_adv = grad_sst_adv;
     }
 
-    public Double getRetention_mean_depth_mld_sigma() {
-        return retention_mean_depth_mld_sigma;
+    public Double getRetention() {
+        return retention;
     }
 
-    public void setRetention_mean_depth_mld_sigma(Double retention_mean_depth_mld_sigma) {
-        this.retention_mean_depth_mld_sigma = retention_mean_depth_mld_sigma;
+    public void setRetention(Double retention) {
+        this.retention = retention;
+    }
+
+    public Double getMean_depth_mld_sigma() {
+        return mean_depth_mld_sigma;
+    }
+
+    public void setMean_depth_mld_sigma(Double mean_depth_mld_sigma) {
+        this.mean_depth_mld_sigma = mean_depth_mld_sigma;
     }
 
     public Double getMean_depth_max_fluo() {

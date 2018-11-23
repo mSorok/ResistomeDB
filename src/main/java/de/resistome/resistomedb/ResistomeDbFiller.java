@@ -23,9 +23,9 @@ public class ResistomeDbFiller implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        dataFileReader.readMetaRuns("");
+        dataFileReader.readMetaRuns("data/meta_runs.tsv");
 
-        dataFileReader.readMeta2("");
+        dataFileReader.readMeta2("data/meta2.tsv");
 
         dataFileReader.readDeepArgKaiju("");
 
