@@ -39,7 +39,9 @@ public class ArgOrfCpd {
 
 
 
-    //			sample	gene	contig_id	ptn_id	contig_length	plasmid	Plasflow_phyla	read_id	taxon_kaiju	taxon_name_kaiju
+
+
+    //			sample	gene	contig_id	ptn_id	contig_length	plasmid		read_id	taxon_kaiju	taxon_name_kaiju
 
 
     public Integer getAocpdid() {
@@ -145,4 +147,6 @@ public class ArgOrfCpd {
     public void setProblematic_classification(Integer problematic_classification) {
         this.problematic_classification = problematic_classification;
     }
+
+
 }

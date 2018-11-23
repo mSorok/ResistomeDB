@@ -14,5 +14,11 @@ public class Arg {
 
     private String arg;
 
+    private String arg_description;
+
+    private String arg_family;
+
+    // TODO add long String = newik table = TEXT or BLOB field
+
     //TODO
 }

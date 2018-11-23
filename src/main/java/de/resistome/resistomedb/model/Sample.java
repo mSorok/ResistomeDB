@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
-@Table(name="sample", indexes = {  @Index(name = "IDX1", columnList = "sampleid", unique = true)} )
+@Table(name="sample", indexes = {  @Index(name = "IDX1", columnList = "sample_id", unique = true)} )
 public class Sample {
 
     @Id
@@ -14,25 +14,25 @@ public class Sample {
 
     private String sample_id_explained; // Sample label [TARA_station#_environmental-feature_size-fraction] - FROM meta_fordb
 
-    private String pangea_id; // PANGEA Sample ID (in meta2) or PANGEA sample identifier in meta_dordb
+    private String pangea_id; // PANGEA Sample ID (in meta2) or PANGEA sample identifier in meta_fordb
 
     private ArrayList<String> run_accession; // starts with ERR - corresponds to the ID from the ENA runs - "value" in meta_fordb
 
-    @Column(name = "mean_date", columnDefinition="TIMESTAMP")
-    @Temporal(TemporalType.TIMESTAMP)
+/*    @Column(name = "mean_date", columnDefinition="TIMESTAMP")
+    @Temporal(TemporalType.TIMESTAMP)*/
     private Date mean_date; //Mean_Date [YY/MM/DD hh:mm]* from meta2
 
-    @Column(name = "date_time", columnDefinition="TIMESTAMP")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date date_time; //Date/Time [yyyy-mm-ddThh:mm] from meta_fordb
+/*    @Column(name = "date_time", columnDefinition="TIMESTAMP")
+    @Temporal(TemporalType.TIMESTAMP)*/
+    private Date date_time; //Date/Time [yyyy-mm-ddThh:mm] from meta_runs
 
-    private Double mean_lattitude; //Mean_Lat* from meta2 AND Latitude [degrees North] from meta_fordb
+    private Double mean_lattitude; //Mean_Lat* from meta2 AND Latitude [degrees North] from meta_runs
 
-    private Double mean_longitude; //Mean_Long* from meta2 AND Longitude [degrees East] from meta_fordb
+    private Double mean_longitude; //Mean_Long* from meta2 AND Longitude [degrees East] from meta_runs
 
     private Double mean_depth; //Mean_Depth [m] from meta2
 
-    private Double biosample_depth; // Sampling depth [m] from meta_fordb
+    private Double biosample_depth; // Sampling depth [m] from meta_runs
 
     private Double mean_temperature; //Mean_Temperature [deg C]* from meta2
 
@@ -96,21 +96,21 @@ public class Sample {
 
     private Integer minimum_generation_time; //minimum generation time [h] from meta2
 
-    private String insdc_sample_acc_number; // from meta_fordb - ERS....
+    private String insdc_sample_acc_number; // from meta_runs - ERS....
 
-    private String insdc_run_acc_number ; //from meta_fordb ERR598950|ERR599095
+    private String insdc_run_acc_number ; //from meta_runs ERR598950|ERR599095
 
-    private String station_id; // from meta_fordb : Station identifier [TARA_station#]
+    private String station_id; // from meta_runs : Station identifier [TARA_station#]
 
-    public String environmental_feature ; // Environmental Feature from meta_fordb
+    public String environmental_feature ; // Environmental Feature from meta_runs
 
-    private Double size_fraction_lower_threshold ; // Size fraction lower threshold [micrometre] from meta_fordb
+    private Double size_fraction_lower_threshold ; // Size fraction lower threshold [micrometre] from meta_runs
 
     private Double size_fraction_upper_threshold ; // Size fraction upper threshold [micrometre] from meta_fordb
 
-    public String marine_pelagic_biomes; // Marine pelagic biomes (Longhurst 2007) from meta_fordb
+    public String biogeographic_biomes; // Marine pelagic biomes (Longhurst 2007) from meta_fordb
 
-    public String marine_pelagic_biomes_mrgid; //Marine pelagic biomes  (Longhurst 2007) [MRGID registered at www.marineregions.com]
+    public String marine_provinces; //Marine pelagic biomes  (Longhurst 2007) [MRGID registered at www.marineregions.com]
 
     public String region;  //Ocean and sea regions (IHO General Sea Areas 1953) [MRGID registered at www.marineregions.com] from meta_fordb
 
@@ -508,20 +508,20 @@ public class Sample {
         this.size_fraction_upper_threshold = size_fraction_upper_threshold;
     }
 
-    public String getMarine_pelagic_biomes() {
-        return marine_pelagic_biomes;
+    public String getBiogeographic_biomes() {
+        return biogeographic_biomes;
     }
 
-    public void setMarine_pelagic_biomes(String marine_pelagic_biomes) {
-        this.marine_pelagic_biomes = marine_pelagic_biomes;
+    public void setBiogeographic_biomes(String biogeographic_biomes) {
+        this.biogeographic_biomes = biogeographic_biomes;
     }
 
-    public String getMarine_pelagic_biomes_mrgid() {
-        return marine_pelagic_biomes_mrgid;
+    public String getMarine_provinces() {
+        return marine_provinces;
     }
 
-    public void setMarine_pelagic_biomes_mrgid(String marine_pelagic_biomes_mrgid) {
-        this.marine_pelagic_biomes_mrgid = marine_pelagic_biomes_mrgid;
+    public void setMarine_provinces(String marine_provinces) {
+        this.marine_provinces = marine_provinces;
     }
 
     public String getRegion() {

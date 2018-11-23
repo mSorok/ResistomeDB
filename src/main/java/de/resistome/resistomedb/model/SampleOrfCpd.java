@@ -16,9 +16,11 @@ public class SampleOrfCpd {
 
     private Integer sample_id;
 
+    private String run_accession; //TODO to figure out how to eliminate redundancy
+
     private Integer orf_id;
 
-    public Double fpkm;
+    public Double fpkm; // to the future : eventually SUM or corrected SUM or the MEAN (to be determined) of the fpkm for the sample of the runs
 
 
 
@@ -54,5 +56,29 @@ public class SampleOrfCpd {
 
     public void setFpkm(Double fpkm) {
         this.fpkm = fpkm;
+    }
+
+    public Integer getSample_id() {
+        return sample_id;
+    }
+
+    public void setSample_id(Integer sample_id) {
+        this.sample_id = sample_id;
+    }
+
+    public String getRun_accession() {
+        return run_accession;
+    }
+
+    public void setRun_accession(String run_accession) {
+        this.run_accession = run_accession;
+    }
+
+    public Integer getOrf_id() {
+        return orf_id;
+    }
+
+    public void setOrf_id(Integer orf_id) {
+        this.orf_id = orf_id;
     }
 }
