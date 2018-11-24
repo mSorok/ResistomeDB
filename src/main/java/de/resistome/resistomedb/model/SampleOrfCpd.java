@@ -1,11 +1,13 @@
 package de.resistome.resistomedb.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name="sample_orf_cpd", indexes = {
+        @Index(name = "IDX1", columnList = "sample_id"),
+        @Index(name="IDX2", columnList = "run_accession"),
+        @Index(name="IDX3", columnList = "orf_id")
+})
 public class SampleOrfCpd {
 
     //FPKM

@@ -2,10 +2,15 @@ package de.resistome.resistomedb.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.Date;
+
 
 @Entity
-@Table(name="sample", indexes = {  @Index(name = "IDX1", columnList = "sample_id", unique = true)} )
+@Table(name="sample", indexes = {
+        @Index(name = "IDX1", columnList = "sample_id", unique = true),
+        @Index(name="IDX2", columnList = "sample_id_explained", unique=true),
+        @Index(name="IDX3", columnList = "pangea_id", unique=true),
+        @Index(name="IDX5", columnList = "region", unique=false)
+} )
 public class Sample {
 
     @Id
@@ -20,11 +25,11 @@ public class Sample {
 
 /*    @Column(name = "mean_date", columnDefinition="TIMESTAMP")
     @Temporal(TemporalType.TIMESTAMP)*/
-    private Date mean_date; //Mean_Date [YY/MM/DD hh:mm]* from meta2
+    private String mean_date; //Mean_Date [YY/MM/DD hh:mm]* from meta2
 
 /*    @Column(name = "date_time", columnDefinition="TIMESTAMP")
     @Temporal(TemporalType.TIMESTAMP)*/
-    private Date date_time; //Date/Time [yyyy-mm-ddThh:mm] from meta_runs
+    private String date_time; //Date/Time [yyyy-mm-ddThh:mm] from meta_runs
 
     private Double mean_lattitude; //Mean_Lat* from meta2 AND Latitude [degrees North] from meta_runs
 
@@ -95,7 +100,7 @@ public class Sample {
 
     private Double fc_picoeukaryotes; //FC - picoeukaryotes [cells/mL]
 
-    private Integer minimum_generation_time; //minimum generation time [h] from meta2
+    private Double minimum_generation_time; //minimum generation time [h] from meta2
 
     private String insdc_sample_acc_number; // from meta_runs - ERS....
 
@@ -120,7 +125,7 @@ public class Sample {
 
 
 
-    private Integer variable; //variable from meta_fordb
+    //private Integer variable; //variable from meta_fordb
 
 
 
@@ -165,19 +170,19 @@ public class Sample {
         this.run_accession = run_accession;
     }
 
-    public Date getMean_date() {
+    public String getMean_date() {
         return mean_date;
     }
 
-    public void setMean_date(Date mean_date) {
+    public void setMean_date(String mean_date) {
         this.mean_date = mean_date;
     }
 
-    public Date getDate_time() {
+    public String getDate_time() {
         return date_time;
     }
 
-    public void setDate_time(Date date_time) {
+    public void setDate_time(String date_time) {
         this.date_time = date_time;
     }
 
@@ -461,11 +466,11 @@ public class Sample {
         this.fc_picoeukaryotes = fc_picoeukaryotes;
     }
 
-    public Integer getMinimum_generation_time() {
+    public Double getMinimum_generation_time() {
         return minimum_generation_time;
     }
 
-    public void setMinimum_generation_time(Integer minimum_generation_time) {
+    public void setMinimum_generation_time(Double minimum_generation_time) {
         this.minimum_generation_time = minimum_generation_time;
     }
 
@@ -541,11 +546,11 @@ public class Sample {
         this.region = region;
     }
 
-    public Integer getVariable() {
+    /*public Integer getVariable() {
         return variable;
     }
 
     public void setVariable(Integer variable) {
         this.variable = variable;
-    }
+    }*/
 }

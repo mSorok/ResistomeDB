@@ -27,9 +27,9 @@ public class ResistomeDbFiller implements CommandLineRunner {
 
         dataFileReader.readMeta2("data/meta2.tsv");
 
-        dataFileReader.readDeepArgKaiju("");
+        dataFileReader.readDeepArgKaiju("data/deepARG_plas_kaiju_RNA.tsv");
 
-        dataFileReader.readFpkm("data/FPKMs.tsv");
+        //dataFileReader.readFpkm("data/FPKMs.tsv");
 
     }
 }

@@ -1,11 +1,13 @@
 package de.resistome.resistomedb.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name="arg_orf_cpd", indexes = {
+        @Index(name="IDX1", columnList = "orf_id"),
+        @Index(name="IDX2", columnList = "arg_id"),
+        @Index(name="IDX3", columnList = "orf_id,arg_id")
+})
 public class ArgOrfCpd {
 
     @Id
@@ -20,7 +22,6 @@ public class ArgOrfCpd {
 
     private Integer query_end;
 
-    private String predicted_arg; // predicted_ARG-class
 
     private String best_hit; // best-hit
 
@@ -84,13 +85,7 @@ public class ArgOrfCpd {
         this.query_end = query_end;
     }
 
-    public String getPredicted_arg() {
-        return predicted_arg;
-    }
 
-    public void setPredicted_arg(String predicted_arg) {
-        this.predicted_arg = predicted_arg;
-    }
 
     public String getBest_hit() {
         return best_hit;

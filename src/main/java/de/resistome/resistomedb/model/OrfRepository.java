@@ -17,4 +17,6 @@ public interface OrfRepository extends CrudRepository<Orf, Integer> {
     Integer findIdByyOrfNt(@Param("orf_nt") String orf_nt);
 
 
+
+
 }

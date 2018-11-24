@@ -1,11 +1,13 @@
 package de.resistome.resistomedb.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name="arg", indexes = {
+        @Index(name = "IDX1", columnList = "arg_id", unique=true),
+        @Index(name="IDX2", columnList = "arg" , unique=true),
+        @Index(name="IDX3", columnList = "arg_class_name" )
+})
 public class Arg {
 
     @Id
@@ -16,9 +18,49 @@ public class Arg {
 
     private String arg_description;
 
-    private String arg_family;
+    private String arg_class_name;
 
-    // TODO add long String = newik table = TEXT or BLOB field
+    @Column(name="newik", columnDefinition="TEXT")
+    private String newik;
 
-    //TODO
+
+    public Integer getArg_id() {
+        return arg_id;
+    }
+
+    public void setArg_id(Integer arg_id) {
+        this.arg_id = arg_id;
+    }
+
+    public String getArg() {
+        return arg;
+    }
+
+    public void setArg(String arg) {
+        this.arg = arg;
+    }
+
+    public String getArg_description() {
+        return arg_description;
+    }
+
+    public void setArg_description(String arg_description) {
+        this.arg_description = arg_description;
+    }
+
+    public String getArg_class_name() {
+        return arg_class_name;
+    }
+
+    public void setArg_class_name(String arg_class_name) {
+        this.arg_class_name = arg_class_name;
+    }
+
+    public String getNewik() {
+        return newik;
+    }
+
+    public void setNewik(String newik) {
+        this.newik = newik;
+    }
 }
