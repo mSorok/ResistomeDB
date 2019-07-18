@@ -494,7 +494,7 @@ public class DataFileReader {
 
                     //Create Orf with tab[20]
                     Orf orf = new Orf();
-                    orf.setOrf_id(tab[20]);
+                    orf.setOrf(tab[20]);
                     orf.setOrf_nt(tab[3]);
                     orf.setAssembled_region_id(tab[12]);
                     orf.setGene(tab[13]);
@@ -519,7 +519,7 @@ public class DataFileReader {
                     //Create the ArgOrfCpd object
 
                     ArgOrfCpd aoc = new ArgOrfCpd();
-                    aoc.setOrf_id(orf.getOid());
+                    aoc.setOrf_id(orf.getOrf_id());
                     aoc.setArg_id(arg.getArg_id());
                     aoc.setQuery_start( Integer.parseInt(tab[1]) );
                     aoc.setQuery_end(Integer.parseInt(tab[2]));

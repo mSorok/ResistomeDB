@@ -15,9 +15,9 @@ public class Orf {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer oid;
+    private Integer orf_id;
 
-    private String orf_id;
+    private String orf;
 
 
     private String orf_nt;
@@ -69,20 +69,20 @@ public class Orf {
     }
 
 
-    public Integer getOid() {
-        return oid;
-    }
-
-    public void setOid(Integer oid) {
-        this.oid = oid;
-    }
-
-    public String getOrf_id() {
+    public Integer getOrf_id() {
         return orf_id;
     }
 
-    public void setOrf_id(String orf_id) {
+    public void setOrf_id(Integer orf_id) {
         this.orf_id = orf_id;
+    }
+
+    public String getOrf() {
+        return orf;
+    }
+
+    public void setOrf(String orf) {
+        this.orf = orf;
     }
 
     public String getOrf_nt() {

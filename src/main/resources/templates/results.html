@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ResistomeDB</title>
+
+    <link rel="stylesheet" href="/css/main.css" />
+
+    <link rel="stylesheet" type="text/css" href="/css/DataTables/datatables.min.css"/>
+
+    <script type="text/javascript" src="/css/DataTables/datatables.min.js"></script>
+</head>
+<body>
+
+
+
+
+
+<div id="resultsArgs">
+
+    <table>
+        <tr th:each="arg : ${args}">
+            <td th:text="${arg.getArg()}"></td>
+            <td>
+                <ul>
+                    <li th:text="${ 'ARG et co: and some stuff'  }" />
+
+                </ul>
+            </td>
+            <!--<td>
+                <img th:src="@{ '/img/'+${score.getDepictionLocation()} }"/>
+
+            </td>-->
+            BLAH BLAS
+        </tr>
+    </table>
+
+
+</div>
+
+</body>
+</html>

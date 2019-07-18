@@ -1,0 +1,23 @@
+html {height:100%;}
+body {height:100%;}
+
+h1, .h1 {
+    font-size: 2.5rem;
+    color: midnightblue
+}
+
+
+table td {
+    vertical-align: top;
+}
+
+#dbtitle{
+    float:top;
+    text-align: center;
+    width:100%;
+}
+
+#resultsArgs{
+    float:left;
+    width:100%;
+}
