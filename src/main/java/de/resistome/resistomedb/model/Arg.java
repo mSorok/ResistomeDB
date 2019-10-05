@@ -6,7 +6,8 @@ import javax.persistence.*;
 @Table(name="arg", indexes = {
         @Index(name = "IDX1", columnList = "arg_id", unique=true),
         @Index(name="IDX2", columnList = "arg" , unique=true),
-        @Index(name="IDX3", columnList = "arg_class_name" )
+        @Index(name="IDX3", columnList = "arg_class_name" ),
+        @Index(name="IDX4", columnList = "scenario")
 })
 public class Arg {
 
@@ -22,6 +23,10 @@ public class Arg {
 
     @Column(name="newik", columnDefinition="TEXT")
     private String newik;
+
+    private String quantification;
+
+    private String scenario;
 
 
     public Integer getArg_id() {
@@ -62,5 +67,21 @@ public class Arg {
 
     public void setNewik(String newik) {
         this.newik = newik;
+    }
+
+    public String getQuantification() {
+        return quantification;
+    }
+
+    public void setQuantification(String quantification) {
+        this.quantification = quantification;
+    }
+
+    public String getScenario() {
+        return scenario;
+    }
+
+    public void setScenario(String scenario) {
+        this.scenario = scenario;
     }
 }

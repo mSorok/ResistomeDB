@@ -26,13 +26,19 @@ public class ResistomeDbApplication implements CommandLineRunner {
 
             if(args[0].equals("filler")) {
 
+
                 dataFileReader.readMetaRuns("data/meta_runs.tsv");
 
                 dataFileReader.readMeta2("data/meta2.tsv");
 
                 dataFileReader.readDeepArgKaiju("data/deepARG_plas_kaiju_RNA.tsv");
 
+
+                dataFileReader.readMedia2("data/media-2.csv");
+
                 //dataFileReader.readFpkm("data/FPKMs.tsv");
+
+                System.out.println("Read everything. Database filled and ready.");
             }
             else if(args[0].equals("web")){
                 //run the web app through the contoller

@@ -48,10 +48,45 @@ public class DataFileReader {
     Utilities utilities ;
 
 
+
+    public void readMedia2(String fileName){
+        //for each line, extract the ARG from the database
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                if(!line.contains("ARG;Q")){
+                    String [] tab = line.split(";");
+
+                    Arg a = argRepository.findByArgName(tab[0]).get(0);
+
+                    a.setQuantification(tab[1]);
+                    a.setScenario(tab[2]);
+
+                    argRepository.save(a);
+
+
+
+                }
+
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+        //update the fields accordingly
+
+        //save to the database
+
+
+    }
+
     public boolean readMetaRuns(String fileName){
         boolean workDone = false;
-
-        //TODO change workDone to true when finish reading
 
         //for each line - check if already exists
 
@@ -142,8 +177,6 @@ public class DataFileReader {
         }
 
         sampleRepository.saveAll( samples.values() );
-
-
 
 
         return workDone;
@@ -552,6 +585,9 @@ public class DataFileReader {
         return workDone;
 
     }
+
+
+
 
 
 
